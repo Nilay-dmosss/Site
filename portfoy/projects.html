@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yulailatun</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+    <link rel="shortcut icon" type="image/png" href="icons8-knight-64.png"/>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+    <header  class="header">
+        <a href="#" class="logo">Portfolio<img src="logom2.svg" class="icon3"/></a>
+        <!-- <nav class="navbar"> -->
+            <!-- eklendi ektstra -->
+            <!-- <div class="New">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> -->
+        <nav class="navbar">
+            <div class="head">
+                <div class="logo"></div>
+                <button type="button" class="close-menu-btn"></button>
+            </div>
+        <!-- ekstra bitiş ul ye class verildi-->
+        <ul>
+            <li><a href="index.html" style="--i:1" class="active">Home</a></li>
+            <li><a href="about.html" style="--i:2"class="menu-link">About Me</a></li>
+            <li><a href="skill.html" style="--i:3"class="menu-link">Skill</a></li>
+            <li><a href="projects.html" style="--i:4"class="menu-link">Projects</a></li>
+            <li><a href="contact.html" style="--i:5"class="menu-link">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="header-left">
+    <button type="button" class="icon-btn"><i class="fa-solid fa-moon"></i></button>
+</div>
+<div class="header-right">
+
+    <button type="button" class="open-menu-btn">
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+    </button>
+</div></div>
+</header>
+<section class="home">
+    <div class="home-content">
+        <h3></h3>
+        <h1></h1>
+        <br><h3><span class="text"></span></h3>
+        <p>Check my github
+            <br><br>Also I have many different experiences like graphic design,e-commmerce,analysis.
+            <br>Nowadays I'm learning many things about development and trying to combine both of them.</p>
+            <br>
+        </section>
+ <!-- çizgi menu  -->
+ <section class="hero2">
+    <div id="menu1" class="content">Home</div>
+</section>
+<section class="hero2">
+    <div id="menu2" class="content2">About me</div>
+</section>
+<section class="hero2">
+    <div id="menu3" class="content3">Skills</div>
+</section>
+<section class="hero2">
+    <div id="menu4" class="content4">Projects</div>
+</section>
+<section class="hero2">
+    <div id="menu5" class="content5">Contact</div>
+</section>
+<footer class="footer"><div>&copy; 2023 Nilay</div></footer>
+<script>
+    const menu = document.querySelector(".navbar");
+const openMenuBtn = document.querySelector(".open-menu-btn");
+const closeMenuBtn = document.querySelector(".close-menu-btn");
+const menuLinks = document.querySelectorAll(".menu-link"); /*menu */
+
+[openMenuBtn, closeMenuBtn].forEach((btn) => {
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("open"); /* open */
+        menu.style.transition = "transform 0.5s ease"; /* transtion*/
+    });
+});
+
+/* memu-link  */
+menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("open"); // 
+    });
+});
+
+/* width menu */
+menu.addEventListener("transitionend", function () {
+    this.removeAttribute("style");
+});
+/* header*/
+const header = document.querySelector(".header");
+const img = document.querySelector(".img");
+
+
+function changeHeaderBg() {
+    const scrollY = window.scrollY;
+    header.style.transition = "all 0.2s ease";
+
+    /* scroll */
+    if (scrollY > 0) {
+        header.style.background = "linear-gradient(to right,rgb(60, 4, 77),rgb(0, 0, 0))";
+        header.style.height = "50px";
+        header.style.boxShadow = "transparent";
+        img.src = "./logom2.svg";
+    }
+    /* logom */
+    else {
+        header.style.height = "70px";
+        header.style.background = "transparent";
+        header.style.boxShadow = "linear-gradient(to Top,rgb(60, 4, 77),rgb(0, 0, 0))";
+        img.src = "./img/logom2.svg";
+
+    }
+}
+
+/* */
+window.addEventListener("scroll", () => {
+    changeHeaderBg();
+})
+</script>
+    
+</body>
+</html>
+

@@ -1,0 +1,24 @@
+@media screen and (max-width: 480px) {
+    .desktop-nav    {
+        display: none;
+    }
+    .ara-nav{
+        display: flex;
+    }
+    .container {
+        width: 100vw;
+        padding-left: 12px;
+        padding-right: 12px;
+        justify-content: center;
+        width: 1000px;
+        margin: auto;
+        gap:5px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 2fr 2fr  1fr;
+        grid-template-areas: 
+        "header header header"
+        "menu"
+    }
+   
+}
+    
